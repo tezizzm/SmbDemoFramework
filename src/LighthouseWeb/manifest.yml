@@ -1,0 +1,8 @@
+---
+applications:
+- name: lighthouseweb
+buildpack: hwc_buildpack
+health-check-type: http
+stack: windows2016
+services:
+- win-fs-ups

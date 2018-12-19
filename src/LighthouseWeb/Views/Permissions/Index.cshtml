@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LighthouseWeb.Models.PermissionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index - Currently Logged in as user @Model.First().LoggedInUser</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Directory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Access)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rights)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Directory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Access)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rights)
+        </td>
+    </tr>
+}
+</table>

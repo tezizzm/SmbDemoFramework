@@ -1,0 +1,64 @@
+﻿@model LighthouseWeb.Models.FileDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Directory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Directory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LineCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LineCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileContent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
