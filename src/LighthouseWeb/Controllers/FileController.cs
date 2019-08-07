@@ -7,6 +7,7 @@ namespace LighthouseWeb.Controllers
     public class FileController : Controller
     {
         private readonly ISmbService _smbService;
+        private bool _disposed;
 
         public FileController(ISmbService smbService)
         {
@@ -85,10 +86,19 @@ namespace LighthouseWeb.Controllers
             }
         }
 
-        public void Dispose()
+        protected override void Dispose(bool disposing)
         {
-            _smbService?.Dispose();
-            base.Dispose();
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                _smbService.Dispose();
+            }
+
+            _disposed = true;
+
+            base.Dispose(disposing);
         }
     }
 }

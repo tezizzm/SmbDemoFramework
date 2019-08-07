@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Microsoft.Extensions.Configuration;
 using Steeltoe.Common.Configuration.Autofac;
 using Steeltoe.Common.Options.Autofac;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
@@ -45,6 +44,14 @@ namespace LighthouseWeb
             var container = builder.Build();
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            Console.WriteLine("Finished Declaring Dependencies");
+        }
+
+        private void Application_Error(object sender, EventArgs e)
+        {
+            var lastError = Server.GetLastError();
+            Console.WriteLine("Unhandled exception: " + lastError.Message + lastError.StackTrace);
         }
     }
 }

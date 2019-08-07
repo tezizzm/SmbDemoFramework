@@ -68,7 +68,6 @@ namespace LighthouseWeb
             return _smbClient.DirectoryInformation();
         }
 
-
         public void Dispose()
         {
             _smbClient?.Dispose();

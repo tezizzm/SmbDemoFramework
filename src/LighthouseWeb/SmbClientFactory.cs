@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System;
+using Microsoft.Extensions.Options;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
 
 namespace LighthouseWeb
@@ -14,6 +15,7 @@ namespace LighthouseWeb
 
         public ISmbClient GetInstance()
         {
+            Console.WriteLine("Creating SMB Client");
             foreach (var service in _services.ServicesList)
             {
                 if (service.Label == "user-provided" && service.Name == "win-fs-ups")
