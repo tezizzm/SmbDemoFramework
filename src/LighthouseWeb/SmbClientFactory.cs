@@ -18,7 +18,7 @@ namespace LighthouseWeb
             Console.WriteLine("Creating SMB Client");
             foreach (var service in _services.ServicesList)
             {
-                if (service.Label == "user-provided" && service.Name == "win-fs-ups")
+                if (service.Label == "user-provided" && service.Name == "winfs-framework")
                 {
                     var url = service.Credentials["url"].Value;
                     var password = service.Credentials["password"]?.Value;

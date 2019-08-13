@@ -1,8 +1,9 @@
 ---
 applications:
 - name: lighthouseweb
-buildpack: hwc_buildpack
-health-check-type: http
-stack: windows2016
-services:
-- winfs-framework
+  buildpacks:
+  - hwc_buildpack
+  health-check-type: process
+  stack: windows
+  services:
+  - winfs-framework
